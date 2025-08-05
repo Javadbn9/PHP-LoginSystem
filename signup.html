@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <button onclick="window.location.href='index.html'" class="nav-btn">Back to Home</button>
+        </div>
+    </nav>
+    <div class="content-container">
+        <form action="register.php" method="POST" class="form-container" onsubmit="return validateForm()">
+            <h2>Sign Up</h2>
+
+            <label>Email:</label><br>
+            <input type="email" name="email" id="email" required><br>
+
+            <label>Password:</label><br>
+            <input type="password" name="password" id="password" required><br>
+
+            <label>Profile Name:</label><br>
+            <input type="text" name="profile_name" id="profile_name" required><br>
+            
+            <button type="submit" class="nav-btn">Submit</button>
+            <div id="error" class="error"></div>
+        </form>
+    </div>
+    <script>
+        function validateForm() {
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+            let profileName = document.getElementById("profile_name").value;
+            let errorDiv = document.getElementById("error");
+
+            if (!email.includes("@") || !email.includes(".")) {
+                errorDiv.innerHTML = "Please enter a valid email address.";
+                return false;
+            }
+            if (password.length < 6) {
+                errorDiv.innerHTML = "Password must be at least 6 characters.";
+                return false;
+            }
+            if (profileName.length < 2) {
+                errorDiv.innerHTML = "Profile name must be at least 2 characters.";
+                return false;
+            }
+            errorDiv.innerHTML = "";
+            return true;
+        }
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'95e8d9d36b612443',t:'MTc1MjQxMDQ0OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
