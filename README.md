@@ -182,3 +182,5 @@ To ensure the project works smoothly when uploaded to GitHub, consider the follo
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
+
+#php #mysql #login #signup #authentication #webdevelopment #phpdeveloper #authsystem #xampp #backend #fullstack #webapp #html #css #javascript 
